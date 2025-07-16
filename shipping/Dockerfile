@@ -8,6 +8,7 @@
 #     DB_HOST="mysql"
 # CMD ["java","-jar","shipping.jar"]
 FROM almalinux:9
+WORKDIR /opt/server
 COPY pom.xml .
 COPY src /opt/server/src
 CMD ["sleep","1000"]
