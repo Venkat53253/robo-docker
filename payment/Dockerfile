@@ -7,7 +7,6 @@ COPY payment.ini .
 COPY *.py .
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop \
     && chown -R roboshop:roboshop /opt/server \
-    && apk add --no-cache python3-dev build-base linux-headers pcre-dev \
     && pip3 install -r requirements.txt
 USER roboshop
 CMD ["uwsgi", "--ini", "payment.ini"]
