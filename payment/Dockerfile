@@ -5,7 +5,7 @@ WORKDIR /opt/server
 COPY requirements.txt .
 COPY payment.ini .
 COPY *.py .
-RUN addgroup -S roboshop && adduser -S roboshop -G roboshop \
+RUN addgroup --system roboshop && adduser --system --ingroup roboshop roboshop \
     && chown -R roboshop:roboshop /opt/server \
     && pip3 install -r requirements.txt
 USER roboshop
